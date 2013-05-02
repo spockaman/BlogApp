@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Sign Up</title>
+    <style type="text/css">
+      h3{font-family: Calibri; font-size: 22pt; font-style: normal; font-weight: bold; color:SlateBlue;
+	text-align: center; text-decoration: underline }
+	table{font-family: Calibri; color:white; font-size: 11pt; font-style: normal;
+	text-align:; background-color: SlateBlue; border-collapse: collapse; border: 2px solid navy}
+      .error {color: black; font-weight: bold}
+    </style>
+
+  </head>
+
+  <body>
+
+    <h3>Signup</h3>
+    <form method="post">
+      <table align="center" cellpadding = "10">
+        <tr>
+          <td>
+            Username
+          
+          </td>
+           
+          <td>
+            <input type="text" name="username" value="{{username}}">
+          </td>
+          <td class="error">
+            {{error_username}}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Password
+          </td>
+          <td>
+            <input type="password" name="password" value="">
+          </td>
+          <td class="error">
+            {{error_password}}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Verify Password
+          </td>
+          <td>
+            <input type="password" name="verify" value="">
+          </td>
+          <td class="error">
+            {{error_verify}}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Email (optional)
+          </td>
+          <td>
+            <input type="text" name="email" value="{{email}}">
+          </td>
+          <td class="error">
+            {{error_email}}
+          </td>
+        </tr>
+        <tr>
+       <td colspan="2" align="center">
+       <input type="submit">
+        </td>
+        </tr>
+      </table>
+
+      
+    </form>
+  </body>
+
+</html>

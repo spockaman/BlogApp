@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" /> 
+  <link type="text/css" rel="stylesheet" href="/static/stylebase.css" />
+  {% if user %}
+  <title>{{user.name}}</title>
+   
+  {% else %}
+
+  <title>Aman Blog</title>
+
+ {% endif %} 
+</head>
+
+<body>
+ <div id="wrapper">
+  <div id="header">
+   <div id="logo">
+     {% if user %}
+      <h1><a href="/blog">{{user.name}} Blog</a></h1>
+   
+  {% else %}
+
+   <h1><a href="/blog">Aman Blog</a></h1>
+
+ {% endif %} 
+   
+   </div>
+  
+
+  <div id="menu">
+    {% if user %}
+    <ul>
+				{{user.name}}<li class="first"><a href="/blog/logout">Logout</a></li>
+				<li class="last"><a href="/blog/newpost">Newpost</a></li>
+				
+			</ul>  
+    {% else %}
+     <ul>
+        <li class="first"><a href="/blog/login">Login</a></li>
+      
+        <li class="last"><a class="last" href="/blog/signup">Signup</a></li>
+     </ul>
+    {% endif %}
+  </div>
+ </div>
+
+ <div id="page">
+
+  <div id="content">
+   <div id="post1">
+  {% block content %}
+  {% endblock %}
+   </div>
+  </div>
+ </div>
+</body>
+
+</html>
+
